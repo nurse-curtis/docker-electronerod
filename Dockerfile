@@ -43,7 +43,7 @@ WORKDIR /root
 # S6 Overlay
 COPY rootfs /
 ADD env/.bashrc /root/
-RUN curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz \
+RUN apt-get -y install curl && curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz \
     | tar xzf - -C /
 
 ENTRYPOINT [ "/init" ]
