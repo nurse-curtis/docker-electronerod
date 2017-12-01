@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
-exec electroneumd --log-level=0 --p2p-bind-ip=0.0.0.0 --p2p-bind-port=26967 --rpc-bind-ip=127.0.0.1 --rpc-bind-port=26968
+exec electroneumd --log-level=0 --p2p-bind-ip=0.0.0.0 --p2p-bind-port=26967 --rpc-bind-ip=127.0.0.1 --rpc-bind-port=26968 --non-interactive
 
