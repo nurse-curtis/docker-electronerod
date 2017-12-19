@@ -25,11 +25,12 @@ if [ -z "$DAEMON_EXTRA_ARGS" ]; then
 fi
 
 echo "Starting electroneumd with:"
-echo "  LOG_LEVEL:     $LOG_LEVEL"
-echo "  P2P_BIND_IP:   $P2P_BIND_IP"
-echo "  P2P_BIND_PORT: $P2P_BIND_PORT"
-echo "  RPC_BIND_IP:   $RPC_BIND_IP"
-echo "  RPC_BIND_PORT: $RPC_BIND_PORT"
+echo "  LOG_LEVEL:         $LOG_LEVEL"
+echo "  P2P_BIND_IP:       $P2P_BIND_IP"
+echo "  P2P_BIND_PORT:     $P2P_BIND_PORT"
+echo "  RPC_BIND_IP:       $RPC_BIND_IP"
+echo "  RPC_BIND_PORT:     $RPC_BIND_PORT"
+echo "  DAEMON_EXTRA_ARGS: $DAEMON_EXTRA_ARGS"
 echo ""
 
 exec electroneumd --log-level=$LOG_LEVEL --p2p-bind-ip=$P2P_BIND_IP --p2p-bind-port=$P2P_BIND_PORT --rpc-bind-ip=$RPC_BIND_IP --rpc-bind-port=$RPC_BIND_PORT --non-interactive $DAEMON_EXTRA_ARGS
