@@ -1,4 +1,31 @@
 #!/usr/bin/with-contenv bash
 
-exec electroneumd --log-level=0 --p2p-bind-ip=0.0.0.0 --p2p-bind-port=26967 --rpc-bind-ip=127.0.0.1 --rpc-bind-port=26968 --non-interactive
+if [ -z "$LOG_LEVEL" ]; then
+      LOG_LEVEL=0
+fi
 
+if [ -z "$P2P_BIND_IP" ]; then
+      P2P_BIND_IP=0.0.0.0
+fi
+
+if [ -z "$P2P_BIND_PORT" ]; then
+      P2P_BIND_PORT=26967
+fi
+
+if [ -z "$RPC_BIND_IP" ]; then
+      RPC_BIND_IP=127.0.0.1
+fi
+
+if [ -z "$RPC_BIND_PORT" ]; then
+      RPC_BIND_PORT=26968
+fi
+
+echo "Starting electroneumd with:"
+echo "  LOG_LEVEL:     $LOG_LEVEL"
+echo "  P2P_BIND_IP:   $P2P_BIND_IP"
+echo "  P2P_BIND_PORT: $P2P_BIND_PORT"
+echo "  RPC_BIND_IP:   $RPC_BIND_IP"
+echo "  RPC_BIND_PORT: $RPC_BIND_PORT"
+echo ""
+
+exec electroneumd --log-level=$LOG_LEVEL --p2p-bind-ip=$P2P_BIND_IP --p2p-bind-port=$P2P_BIND_PORT --rpc-bind-ip=$RPC_BIND_IP --rpc-bind-port=$RPC_BIND_PORT --non-interactive
