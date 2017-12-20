@@ -84,6 +84,33 @@ docker run --detach \
 
 `DAEMON_EXTRA_ARGS` is for advanced users who might want to get very specific with the daemon arguments.
 
+You can follow the logs of the daemon with:
+
+```bash
+docker-compose logs -f app
+```
+
+Or:
+
+```bash
+docker logs -f electroneumd
+```
+
 **Important Note:**
 
 If you are specifying a non-local `RPC_BIND_IP` then you **must** specify `--confirm-external-bind` as extra arguments.
+
+
+## Wallet Access
+
+When the docker daemon is running and in sync with the network, you can use the built in wallet-cli command:
+
+```bash
+docker-compose exec app /bin/bash -c 'cd /wallet && electroneum-wallet-cli'
+```
+
+Or:
+
+```bash
+docker exec -ti electroneumd /bin/bash -c 'cd /wallet && electroneum-wallet-cli'
+```
