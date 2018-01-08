@@ -1,5 +1,8 @@
 # Electroneum Node via Docker
 
+![Stars](https://img.shields.io/docker/stars/jc21/electroneumd.svg)
+![Pulls](https://img.shields.io/docker/pulls/jc21/electroneumd.svg)
+
 The [official electroneum](https://github.com/electroneum/electroneum) repo mentions instructions on building a docker image from their codebase, but don't provide you with a pre-built docker image.
 
 So here it is.
