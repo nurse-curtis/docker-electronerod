@@ -11,6 +11,8 @@ So here it is.
 - Using s6-overlay for process management
 - Builds daemon and wallet-cli from source
 
+**Note:** I don't keep track of [upstream code](https://github.com/electroneum/electroneum) changes so if you find my docker build is out of date, open a issue here on Github and I'll fire off a new build.
+
 ## Up and running
 
 With docker-compose:
