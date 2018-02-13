@@ -42,6 +42,12 @@ docker run --detach \
     jc21/electroneumd
 ```
 
+
+## Using [Rancher](https://rancher.com)?
+
+Easily start an Electroneum Node Stack by adding [my template catalog](https://github.com/jc21/rancher-templates).
+
+
 ## Daemon variables
 
 Using environment variables passed to the container you can override some defaults for the daemon:
