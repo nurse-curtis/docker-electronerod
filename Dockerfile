@@ -18,12 +18,10 @@ RUN set -x \
   && apt-get -qq update \
   && apt-get -qq --no-install-recommends install $buildDeps
 
-RUN git clone https://github.com/electroneum/electroneum.git $SRC_DIR
-WORKDIR $SRC_DIR
-RUN make -j$(nproc) release-static
-
-RUN cp build/release/bin/* /usr/local/bin/ \
-  \
+RUN git clone --branch master --depth 1 https://github.com/electroneum/electroneum.git $SRC_DIR \
+  && cd $SRC_DIR \
+  && make -j$(nproc) release-static \
+  && cp build/release/bin/* /usr/local/bin/ \
   && rm -r $SRC_DIR \
   && apt-get -qq --auto-remove purge $buildDeps
 
