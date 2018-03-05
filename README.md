@@ -12,6 +12,8 @@ So here it is.
 - Builds daemon and wallet-cli from source
 
 **Note:** I don't keep track of [upstream code](https://github.com/electroneum/electroneum) changes so if you find my docker build is out of date, open a issue here on Github and I'll fire off a new build.
+Please check the [latest Docker builds](https://hub.docker.com/r/jc21/electroneumd/builds/) first though.
+
 
 ## Up and running
 
