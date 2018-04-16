@@ -1,5 +1,8 @@
 FROM ubuntu:16.04
 
+MAINTAINER Jamie Curnow <jc@jc21.com>
+LABEL maintainer="Jamie Curnow <jc@jc21.com>"
+
 ENV S6_FIX_ATTRS_HIDDEN=1
 ENV SRC_DIR /usr/local/src/electroneum
 RUN echo "fs.file-max = 65535" > /etc/sysctl.conf
