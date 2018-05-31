@@ -4,7 +4,7 @@ MAINTAINER Jamie Curnow <jc@jc21.com>
 LABEL maintainer="Jamie Curnow <jc@jc21.com>"
 
 ENV S6_FIX_ATTRS_HIDDEN=1
-ENV SRC_DIR /usr/local/src/electroneum
+ENV SRC_DIR /usr/local/src/electronero
 RUN echo "fs.file-max = 65535" > /etc/sysctl.conf
 
 RUN set -x \
@@ -21,7 +21,7 @@ RUN set -x \
   && apt-get -qq update \
   && apt-get -qq --no-install-recommends install $buildDeps
 
-RUN git clone --branch master --depth 1 https://github.com/electroneum/electroneum.git $SRC_DIR \
+RUN git clone --branch master --depth 1 https://github.com/electronero/electronero.git $SRC_DIR \
   && cd $SRC_DIR \
   && make -j$(nproc) release-static \
   && cp build/release/bin/* /usr/local/bin/ \
@@ -29,11 +29,11 @@ RUN git clone --branch master --depth 1 https://github.com/electroneum/electrone
   && apt-get -qq --auto-remove purge $buildDeps
 
 # Contains the blockchain
-VOLUME /root/.electroneum
+VOLUME /root/.electronero
 
 # Generate your wallet via accessing the container and run:
 # cd /wallet
-# electroneum-wallet-cli
+# electronero-wallet-cli
 VOLUME /wallet
 
 EXPOSE 26967
