@@ -21,7 +21,7 @@ RUN set -x \
   && apt-get -qq update \
   && apt-get -qq --no-install-recommends install $buildDeps
 
-RUN git clone --branch master --depth 1 https://github.com/electronero/electronero.git $SRC_DIR \
+RUN git clone --recursive https://github.com/electronero/electronero $SRC_DIR \
   && cd $SRC_DIR \
   && make -j$(nproc) release-static \
   && cp build/release/bin/* /usr/local/bin/ \
